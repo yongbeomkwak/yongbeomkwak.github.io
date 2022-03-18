@@ -2,8 +2,8 @@
 title: template_en
 author: cotes
 date: 2022-03-17
-categories: [Blogging, Tutorial]
-tags: [writing]
+categories: [MarkDown]
+tags: [readme]
 render_with_liquid: false
 ---
 
