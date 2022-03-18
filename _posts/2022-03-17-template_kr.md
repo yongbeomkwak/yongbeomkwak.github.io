@@ -2,7 +2,7 @@
 title: "temlate_kr" # 타이틀 
 author: "yongbeomkwak" #  작성자 
 date: 2022-03-17 # 날짜 
-last_modified_at: 2020-05-25 #수정 날짜 
+last_modified_at: 2022-03-19 #수정 날짜 
 categories: [Blogging, Demo] #카데고리 
 tags: [writing] #테그 
 pin: true  #핀
@@ -10,6 +10,7 @@ pin: true  #핀
 ---
 # 포스트 템플릿
 
+### 파일명:YYYY-MM-DD-postName.md
 
 |속성 명           |      기능            |         예                   |    
 |:---------------|:-------------------:|-----------------------------:|
