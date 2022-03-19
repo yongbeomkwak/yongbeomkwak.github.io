@@ -88,15 +88,15 @@ avatar: 'assets/profile.png'
 # boolean type, the global switch for ToC in posts.
 toc: true
 
-comments:
-  active: 'utterances'       # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+comments: #댓글 기능 
+  active: 'utterances' #utterances 사용       # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname:    # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo:   "yongbeomkwak/yongbeomkwak.github.io"      # <gh-username>/<repo>
-    issue_term: "pathname"  # < url | pathname | title | ...>
+    repo:   "yongbeomkwak/yongbeomkwak.github.io" #댓글 달 저장소     # <gh-username>/<repo>
+    issue_term: "pathname"  #이슈관리 방식  # < url | pathname | title | ...>
     theme: "github-dark"
   # Giscus options › https://giscus.app
   giscus:
