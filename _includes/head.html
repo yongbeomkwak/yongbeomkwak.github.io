@@ -3,6 +3,7 @@
 -->
 
 <head>
+  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" title="{{ site.title }} Feed">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -113,5 +114,5 @@
   {% unless site.theme_mode %}
     {% include mode-toggle.html %}
   {% endunless %}
-  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+  
 </head>
