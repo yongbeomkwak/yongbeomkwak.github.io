@@ -97,7 +97,7 @@ comments: #댓글 기능
   utterances:
     repo:   "yongbeomkwak/yongbeomkwak.github.io" #댓글 달 저장소     # <gh-username>/<repo>
     issue_term: "pathname"  #이슈관리 방식  # < url | pathname | title | ...>
-    theme: "github-dark"
+    theme: "github-dark" #테마
   # Giscus options › https://giscus.app
   giscus:
     repo:             # <gh-username>/<repo>
