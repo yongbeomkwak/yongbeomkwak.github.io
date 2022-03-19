@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://yongbeomkwak.github.io/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | relative_url | prepend: site.url }}
 https://gmlwjd9405.github.io/2017/10/21/include-blog-in-a-NaverSearchEngine.html
