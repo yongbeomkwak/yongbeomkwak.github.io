@@ -7,6 +7,7 @@
   1.  config.yml: 전체적인 환경설정 
   2.  _site: 전체적인 블로그 구조 관리 
   3.  _posts:게시글(MarkDown 형식),YYYY-MM-DD.filename.md
+      - [sitemap 속성](https://www.sitemaps.org/protocol.html)
 
 ##  Extra
 - command
