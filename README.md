@@ -9,6 +9,9 @@
   3.  _posts:게시글(MarkDown 형식),YYYY-MM-DD.filename.md
       - [sitemap 속성](https://www.sitemaps.org/protocol.html)
 
+## Readme Helper
+1.  [이미지](https://hyeonjiwon.github.io/blog/markdown_img/)
+
 ##  Extra
 - command
   - 새 테마로 교체 시 적용: bundle install
