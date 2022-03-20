@@ -13,3 +13,4 @@
 - command
   - 새 테마로 교체 시 적용: bundle install
   - 서버 테스트 실행: bundle exec jekyll serve 
+  - 임시 테스트 설정: sudo bundle exec jekyll serve --host 0.0.0.0 --port 7070

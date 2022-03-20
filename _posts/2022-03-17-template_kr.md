@@ -6,7 +6,6 @@ last_modified_at: 2022-03-19 01:30:00 #수정 날짜
 categories: [MarkDown] #카데고리 
 tags: [readme] #테그 
 pin: true  #핀
-lastmod : 2017-10-20 12:00:00
 sitemap :
     changefreq : weekly
     priority : 1.0
