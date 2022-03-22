@@ -10,11 +10,11 @@
   --main-border-color: #f3f3f3;
 
   /* Common color */
-  --text-color: #34343c;
+  --text-color: #000000; /*게시물 글자 색*/
   --text-muted-color: gray;
   --heading-color: black;
-  --blockquote-border-color: #eee;
-  --blockquote-text-color: #9a9a9a;
+  --blockquote-border-color: rgb(0, 132, 255);
+  --blockquote-text-color: #161616; /* >로 썼을 때 글자 색*/
   --link-color: #2a408e;
   --link-underline-color: #dee2e6;
   --button-bg: #fff;

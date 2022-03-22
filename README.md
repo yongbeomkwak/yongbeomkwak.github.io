@@ -8,9 +8,12 @@
   2.  _site: 전체적인 블로그 구조 관리 
   3.  _posts:게시글(MarkDown 형식),YYYY-MM-DD.filename.md
       - [sitemap 속성](https://www.sitemaps.org/protocol.html)
+       
 
 ## Readme Helper
 1.  [이미지](https://hyeonjiwon.github.io/blog/markdown_img/)
+2.  [수식 적용 세팅](https://mkkim85.github.io/blog-apply-mathjax-to-jekyll-and-github-pages/)
+3.  [수식 사용](https://huni0318.github.io/blog/blog-etc/2020-12-21-markdown-tutorial2/)
 
 ##  Extra
 - command

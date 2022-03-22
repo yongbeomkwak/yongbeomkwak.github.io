@@ -10,11 +10,11 @@
   --main-border-color: rgb(44, 45, 45);
 
   /* Common color */
-  --text-color: rgb(175, 176, 177);
+  --text-color: rgb(255, 255, 255); /* 게시물 기본 색 */
   --text-muted-color: rgb(107, 116, 124);
   --heading-color: #cccccc;
-  --blockquote-border-color: rgb(66, 66, 66);
-  --blockquote-text-color: rgb(117, 117, 117);
+  --blockquote-border-color: rgb(0, 132, 255); /* > 막대색깔 */
+  --blockquote-text-color: rgb(255, 255, 255); /* >로 썼을 때 색*/
   --link-color: rgb(138, 180, 248);
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: rgb(39, 40, 43);
