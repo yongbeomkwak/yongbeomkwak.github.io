@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import this
 from typing import TypeVar
 
 E = TypeVar('E')
