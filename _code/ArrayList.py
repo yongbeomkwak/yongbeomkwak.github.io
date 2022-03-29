@@ -5,7 +5,7 @@ import numpy as np
 
 
 class ArrayList(List):
-    DefaultSize=10
+    DefaultSize:int=10
     data=None
 
     def __init__(self,size=DefaultSize):
@@ -25,17 +25,17 @@ class ArrayList(List):
     def clear(self):
         self.listSize=0
     
-    def update(self,pos,item):
+    def update(self,pos:int,item:E):
         ArrayList.data[pos]=item
     
-    def getValue(self,pos):
+    def getValue(self,pos:int):
         return ArrayList[pos]
     
-    def append(self,item):
+    def append(self,item:E):
         ArrayList.data[self.listSize]=item
         self.listSize+=1
     
-    def insert(self,pos,item):
+    def insert(self,pos:int,item:E):
         # 끝에부터 포스 앞까지 뒤로 당김
         for i in range (self.listSize,pos,-1):
             
@@ -44,7 +44,7 @@ class ArrayList(List):
         ArrayList.data[pos]=item
         self.listSize+=1
 
-    def remove(self,pos):
+    def remove(self,pos:int):
         ret=ArrayList.data[pos]
 
         

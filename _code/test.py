@@ -1,20 +1,19 @@
 from ArrayList import *
+from LinkedList import *
 
 if __name__=="__main__":
 
-    mylist=ArrayList()
-    mylist.append(3)
-    print(mylist.data)
-    mylist.append(5)
-    print(mylist.data)
-
-    mylist.insert(0,10)
-    print(mylist.data)
-
-
-    mylist.remove(2)
-    print(mylist.data)
-    print(mylist.length())
-
-    mylist2=ArrayList(30)
-    print(mylist2.data)
+    myList=LinkedList()
+    myList.append(3)
+    print(myList.toString())
+    myList.insert(0,1)
+    print(myList.toString())
+    myList.insert(0,4)
+    print(myList.toString())
+    myList.append(10)
+    print(myList.toString())
+    myList.insert(1,5)
+    print(myList.toString())
+    print("Remove value: ",myList.remove(1))
+    print(myList.toString())
+    print("Length: ",myList.length())

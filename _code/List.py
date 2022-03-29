@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from abc import *
+from typing import TypeVar
 
+E = TypeVar('E')
 
 class List(object):
     __metaclass__ = ABCMeta
@@ -9,25 +11,25 @@ class List(object):
         pass
     
     @abstractmethod
-    def insert(self,pos,item):
+    def insert(self,pos:int,item:E):
         pass
 
     @abstractmethod
-    def append(self,item):
+    def append(self,item:E):
         pass
 
     @abstractmethod
-    def update(self,pos,item):
+    def update(self,pos:int,item:E):
         pass
     
     @abstractmethod
-    def getValue(self,pos):
+    def getValue(self,pos:int):
         pass
     
     @abstractmethod
-    def remove(self,pos):
+    def remove(self,pos:int):
         pass
 
     @abstractmethod
-    def length(self) : 
+    def length(self) -> int: 
         pass
