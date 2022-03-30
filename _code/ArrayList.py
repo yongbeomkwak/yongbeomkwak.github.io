@@ -9,7 +9,7 @@ class ArrayList(List):
     data=None
 
     def __init__(self,size=DefaultSize):
-        ArrayList.data=np.zeros(size)
+        ArrayList.data=np.zeros(size*2) #더블링 기법
         self.listSize=0
     #클래스 메서드(class method)란 객체가 아닌 클래스 자체에 묶여있는(bound to) 메서드이다. 
     # 또다른 생성자 선언
