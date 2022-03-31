@@ -29,7 +29,7 @@ class List(object):
         pass
     
     @abstractmethod
-    def remove(self,pos:int):
+    def remove(self,pos:int)->E:
         pass
 
     @abstractmethod
