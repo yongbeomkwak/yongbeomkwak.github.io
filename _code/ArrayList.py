@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from turtle import pos
 from List import *
+from ListIterator import *
 import numpy as np
 
 
@@ -56,5 +58,31 @@ class ArrayList(List):
 
 
         return ret
+
+    def listIterator(self) -> ListIterator: #반복자 
+        return self.ArrayListIterator(self) #바깥 클래스 전달
+    
+
+    class ArrayListIterator(ListIterator):
+
+        def __init__(self,outer):
+            self.outer:ArrayList=outer
+            self.pos:int=0
+        
+        def hasNext(self) -> bool:
+            return self. pos < self.outer.listSize
+        
+        def next(self) -> E:
+            tmp= self.outer.data[self.pos] 
+            self.pos+=1
+            return tmp
+        
+        def hasPrevious(self) -> bool:
+            return self.pos>0
+        
+        def previous(self) -> E:
+            self.pos-=1
+            return self.outer.data[pos]
+
 
 

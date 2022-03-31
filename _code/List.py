@@ -2,6 +2,8 @@
 from abc import *
 from typing import TypeVar
 
+from ListIterator import *
+
 E = TypeVar('E')
 
 class List(object):
@@ -33,3 +35,8 @@ class List(object):
     @abstractmethod
     def length(self) -> int: 
         pass
+    
+    @abstractmethod 
+    def listIterator(self) -> ListIterator : #반복자 
+        pass
+    
