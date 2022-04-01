@@ -37,12 +37,21 @@ if __name__=="__main__":
         print(iter.previous())'''
     
     mylist3=DoubleLinkedList()
-    mylist3.insert(0,3)
-    mylist3.insert(0,4)
-    mylist3.insert(0,5)
-    mylist3.append(10)
-    mylist3.insert(3,99)
+    mylist3.append_front(6)
+    mylist3.append_front(5)
+    mylist3.append_front(4)
+    mylist3.append_front(3)
+    mylist3.remove(2) # 3 4 6
+    mylist3.append_back(99) # 3 4 6 99
+    mylist3.update(3,11) # 3 4 6 11  
+    mylist3.pop_back() # 3 4 6 
+    mylist3.pop_front() # 4 6
+    
+
+   
+  
+
     iter3:ListIterator=mylist3.listIterator()
 
-    while(iter3.hasNext()):
-        print(iter3.next())
+    while(iter3.hasPrevious()):
+        print(iter3.previous(),end=' ')
