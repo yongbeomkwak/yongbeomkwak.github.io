@@ -21,11 +21,6 @@ sitemap:
       {% else %}
         <changefreq>monthly</changefreq>
       {% endif %}
-      {% if post.sitemap.priority %}
-        <priority>{{ post.sitemap.priority }}</priority>
-      {% else %}
-        <priority>0.5</priority>
-      {% endif %}
     </url>
     {% endunless %}
   {% endfor %}

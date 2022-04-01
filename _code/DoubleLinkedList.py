@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from typing import TypeVar
+
+from more_itertools import tail
 from Dlink import *
 from List import *
 from ListIterator import *
@@ -8,8 +10,8 @@ E = TypeVar('E')
 
 class DoubleLinkedList(List):
     def __init__(self) -> None:
-        self.head:Dlink=Dlink(None,None,None)
-        self.tail=self.head
+        self.head:Dlink=Dlink(None,None,None) # 별도의 head
+        self.tail:Dlink=Dlink(None,None,None) # 별도의 tail
         self.size=0
     
     def insert(self,pos: int, item: E):
@@ -20,9 +22,12 @@ class DoubleLinkedList(List):
         
         new:Dlink=Dlink(item,curr,curr.next)
         curr.next=new
-
-        if(curr==self.tail):
-            self.tail=curr.next
+        curr.next.next.prev=new
+        
+        if(pos==self.size):
+            self.tail.prev=new
+            new.next=self.tail
+            
         
         self.size+=1
     
@@ -55,8 +60,19 @@ class DoubleLinkedList(List):
             curr=curr.next
         return curr.next.item
     
-    def remove(self, pos: int):
-        return super().remove(pos)
+    def remove(self, pos: int)->E:
+        curr:Dlink=self.head
+
+        for _ in range(pos):
+            curr=curr.next
+        
+        ret:E =curr.next.item
+        curr.next.next.prev=curr
+        curr.next=curr.next.next
+        self.size-=1
+
+
+        return ret
 
         
 
@@ -72,7 +88,7 @@ class DoubleLinkedList(List):
             self.curr:Dlink=self.outer.head
         
         def hasNext(self) -> bool:
-            return self.curr!=self.outer.tail
+            return self.curr!=self.outer.tail.prev
         
         def next(self) -> E:
             self.curr=self.curr.next
