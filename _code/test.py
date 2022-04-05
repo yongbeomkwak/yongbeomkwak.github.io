@@ -1,7 +1,9 @@
+from numpy import empty
 from ArrayList import *
 from LinkedList import *
 from DoubleLinkedList import *
-
+from Stack import *
+from Link import *
 if __name__=="__main__":
 
     '''mylist2=ArrayList()
@@ -36,6 +38,7 @@ if __name__=="__main__":
     while(iter.hasPrevious()):
         print(iter.previous())'''
     
+    '''
     mylist3=DoubleLinkedList()
     mylist3.append_front(6)
     mylist3.append_front(5)
@@ -55,3 +58,16 @@ if __name__=="__main__":
 
     while(iter3.hasPrevious()):
         print(iter3.previous(),end=' ')
+'''
+
+st=Stack()
+
+st.push(3)
+st.push(2)
+st.push(1)
+
+
+
+while(not(st.empty())):
+    print(st.pop())
+
