@@ -1,5 +1,3 @@
-import imp
-
 from sympy import true
 from Astack import * 
 from Link import *
