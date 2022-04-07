@@ -24,7 +24,5 @@ sitemap:
       {% else %}
         <priority>0.5</priority>
       {% endif %}
-    </url>
-    {% endunless %}
-  {% endfor %}
+    </url>{% endunless %}{% endfor %}
 </urlset>
