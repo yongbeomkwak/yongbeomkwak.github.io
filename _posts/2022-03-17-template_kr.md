@@ -1,7 +1,7 @@
 ---
 title: "template_kr" # 타이틀 
 author: "yongbeomkwak" #  작성자 
-date: 2022-03-17 # 날짜 
+date: 2022-03-17 +09:00 # 날짜 
 last_modified_at: 2022-03-19 01:30:00 #수정 날짜 
 categories: [MarkDown] #카데고리 
 tags: [readme] #테그 
