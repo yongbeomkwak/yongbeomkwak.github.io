@@ -181,7 +181,7 @@ class BinaryTree:
 from BinaryTree import *
 from Node import *
 if __name__=="__main__":
-        root=Node(100)
+    root=Node(100)
     tree=BinaryTree(root)
     tree.insert_Node(root,Node(50))
     tree.insert_Node(root,Node(80))
