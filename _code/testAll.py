@@ -74,7 +74,6 @@ if __name__=="__main__":
             50          120
         20      80   110    180
     '''
-
     print("Pre Order")
     tree.preorder(root)
     print("Post Order")
