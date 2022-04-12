@@ -1,5 +1,4 @@
-from BinaryTree import *
-from Node import *
+from ArrayTree import *
 if __name__=="__main__":
     
 #     mylist3=DoubleLinkedList() #이중 연결 리스트 생성 
@@ -60,25 +59,8 @@ if __name__=="__main__":
 #     print(f'stack pop: {ast.pop()}')
 
 # print(f'Stack is emtpy? {ast.empty()}')
-    root=Node(100)
-    tree=BinaryTree(root)
-    tree.insert_Node(root,Node(50))
-    tree.insert_Node(root,Node(80))
-    tree.insert_Node(root,Node(120))
-    tree.insert_Node(root,Node(20))
-    tree.insert_Node(root,Node(110))
-    tree.insert_Node(root,Node(180))
 
-    '''
-                100
-            50          120
-        20      80   110    180
-    '''
-    print("Pre Order")
-    tree.preorder(root)
-    print("Post Order")
-    tree.postorder(root)
-    print("In Order")
-    tree.inorder(root)
+
+
 
 
