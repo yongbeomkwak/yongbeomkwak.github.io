@@ -1,5 +1,5 @@
 ---
-title: "Tree" # 타이틀 
+title: "ArrayTree" # 타이틀 
 author: "yongbeomkwak" #  작성자 
 date: 2022-04-12 15:00 +09:00 # 날짜  
 categories: [DataStructure,Tree,ArrayTree] #카데고리 
