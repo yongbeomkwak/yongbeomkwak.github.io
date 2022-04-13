@@ -14,9 +14,6 @@ use_math: true #수식 사용
 
 <img src="https://user-images.githubusercontent.com/48616183/162139076-16837348-aa39-4dbd-96ac-b8ffb2a7c9b8.png" height="70%" width="70%">
 
-
-
-
 <br>
 
 ## 이진트리 종류 
