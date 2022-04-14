@@ -1,53 +1,14 @@
 ---
 title: "BinaryTree" # 타이틀 
 author: "yongbeomkwak" #  작성자 
-date: 2022-04-07 15:30 +09:00 # 날짜  
-categories: [DataStructure,Tree,BinaryTree] #카데고리 
+date: 2022-04-14 12:30 +09:00 # 날짜  
+categories: [DataStructure,Tree,BinarySearchTree] #카데고리 
 tags: [Python] #테그 
 use_math: true #수식 사용
 
 ---
 
-## 이진트리란?
-
-<br>
-
-<img src="https://user-images.githubusercontent.com/48616183/162139076-16837348-aa39-4dbd-96ac-b8ffb2a7c9b8.png" height="70%" width="70%">
-
-<br>
-
-## 이진트리 종류 
-<br>
-
-### Full Binary Tree , Complete Binary Tree
-
-<br>
-
-<img src="https://user-images.githubusercontent.com/48616183/162139315-b578f683-2d40-4662-ace5-ce912d3cbac0.png" height="70%" width="70%">
-
-<br>
-
-### Perfect Binary Tree
-
-<br>
-
-
-<img src="https://user-images.githubusercontent.com/48616183/162140958-6e61a3f6-2bbe-42e5-a398-737333961191.png" height="70%" width="70%">
-
-<br>
-
-
-
-## Binary Node ADT
-
-<img src="https://user-images.githubusercontent.com/48616183/162141571-72bbe249-1b2b-4f20-a3e6-cf9d630ca3e3.png" height="70%" width="70%">
-
-
-## 순회
-
-<br>
-
-<img src="https://user-images.githubusercontent.com/48616183/162141887-cf5c62fc-cfc1-4b25-8faa-13596a54088c.png" height="70%" width="70%">
+## 이진탐색트리란?
 
 
 ## 코드
@@ -123,7 +84,6 @@ class Node(Anode):
 ~~~python
 from Node import *
 from typing import TypeVar
-from Lnode import *
 E = TypeVar('E')
 
 class BinaryTree:
@@ -148,28 +108,28 @@ class BinaryTree:
         return self.__root
 
     def visit(self,node:Node):
-        print(node.getItem(),end=" ")
+        print(node.getItem())
     
-    def preorder(self,node:Anode):
+    def preorder(self,node:Node):
         if(node==None):
             return
         self.visit(node) #자기자신
-        self.preorder(node.getLeft()) #왼쪽 
-        self.preorder(node.getRight()) #오른쪽
+        self.preorder(node.left) #왼쪽 
+        self.preorder(node.right) #오른쪽
     
-    def postorder(self,node:Anode):
+    def postorder(self,node:Node):
         if(node==None):
             return
-        self.postorder(node.getLeft()) #왼
-        self.postorder(node.getRight()) #오 
+        self.postorder(node.left) #왼
+        self.postorder(node.right) #오 
         self.visit(node) #자기자신 
 
-    def inorder(self,node:Anode):
+    def inorder(self,node:Node):
         if(node==None):
             return
-        self.inorder(node.getLeft()) #왼
+        self.inorder(node.left) #왼
         self.visit(node) #자기자신
-        self.inorder(node.getRight()) #오    
+        self.inorder(node.right) #오
 ~~~
 
 <br>
@@ -180,22 +140,27 @@ class BinaryTree:
 from BinaryTree import *
 from Node import *
 if __name__=="__main__":
-        d:Node = LNode("D")
-    g:Node = LNode("G")
-    h:Node = LNode("H")
-    i:Node = LNode("I")
-    b:Node = Node("B",right=d)
-    e:Node = Node("E",left=g)
-    f:Node = Node("F",h,i)
-    c:Node = Node("C",e,f)
-    a:Node = Node("A",b,c)
-    
-    btree=BinaryTree(a)
-    btree.preorder(btree.getRoot())
-    print()
-    btree.inorder(btree.getRoot())
-    print()
-    btree.postorder(btree.getRoot())
+    root=Node(100)
+    tree=BinaryTree(root)
+    tree.insert_Node(root,Node(50))
+    tree.insert_Node(root,Node(80))
+    tree.insert_Node(root,Node(120))
+    tree.insert_Node(root,Node(20))
+    tree.insert_Node(root,Node(110))
+    tree.insert_Node(root,Node(180))
+
+    '''
+                100
+            50          120
+        20      80   110    180
+    '''
+
+    print("Pre Order")
+    tree.preorder(root)
+    print("Post Order")
+    tree.postorder(root)
+    print("In Order")
+    tree.inorder(root)
 ~~~
 
 ### 최종 구조
