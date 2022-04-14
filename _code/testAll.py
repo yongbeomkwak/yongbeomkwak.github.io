@@ -1,4 +1,6 @@
+from cmath import e
 from ArrayTree import *
+from BinaryTree import *
 if __name__=="__main__":
     
 #     mylist3=DoubleLinkedList() #이중 연결 리스트 생성 
@@ -60,7 +62,21 @@ if __name__=="__main__":
 
 # print(f'Stack is emtpy? {ast.empty()}')
 
-
-
+    d:Node = LNode("D")
+    g:Node = LNode("G")
+    h:Node = LNode("H")
+    i:Node = LNode("I")
+    b:Node = Node("B",right=d)
+    e:Node = Node("E",left=g)
+    f:Node = Node("F",h,i)
+    c:Node = Node("C",e,f)
+    a:Node = Node("A",b,c)
+    
+    btree=BinaryTree(a)
+    btree.preorder(btree.getRoot())
+    print()
+    btree.inorder(btree.getRoot())
+    print()
+    btree.postorder(btree.getRoot())
 
 

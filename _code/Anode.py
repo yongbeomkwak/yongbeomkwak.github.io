@@ -6,6 +6,10 @@ E = TypeVar('E')
 class Anode(metaclass=ABCMeta):
     
     @abstractmethod
+    def getItem(self) -> E:
+        pass
+
+    @abstractmethod
     def getLeft(self)->E:
         pass
     

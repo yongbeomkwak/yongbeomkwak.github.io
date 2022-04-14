@@ -1,5 +1,6 @@
 from Node import *
 from typing import TypeVar
+from Lnode import *
 E = TypeVar('E')
 
 class BinaryTree:
@@ -24,26 +25,26 @@ class BinaryTree:
         return self.__root
 
     def visit(self,node:Node):
-        print(node.getItem())
+        print(node.getItem(),end=" ")
     
-    def preorder(self,node:Node):
+    def preorder(self,node:Anode):
         if(node==None):
             return
         self.visit(node) #자기자신
-        self.preorder(node.left) #왼쪽 
-        self.preorder(node.right) #오른쪽
+        self.preorder(node.getLeft()) #왼쪽 
+        self.preorder(node.getRight()) #오른쪽
     
-    def postorder(self,node:Node):
+    def postorder(self,node:Anode):
         if(node==None):
             return
-        self.postorder(node.left) #왼
-        self.postorder(node.right) #오 
+        self.postorder(node.getLeft()) #왼
+        self.postorder(node.getRight()) #오 
         self.visit(node) #자기자신 
 
-    def inorder(self,node:Node):
+    def inorder(self,node:Anode):
         if(node==None):
             return
-        self.inorder(node.left) #왼
+        self.inorder(node.getLeft()) #왼
         self.visit(node) #자기자신
-        self.inorder(node.right) #오
+        self.inorder(node.getRight()) #오
     
