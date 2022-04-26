@@ -1,7 +1,7 @@
 ---
 title: "BinarySearchTree" # 타이틀 
 author: "yongbeomkwak" #  작성자 
-date: 2022-04-14 12:30 +09:00 # 날짜  
+date: 2022-04-26 18:00 +09:00 # 날짜  
 categories: [DataStructure,Tree,BinarySearchTree] #카데고리 
 tags: [Python] #테그 
 use_math: true #수식 사용
