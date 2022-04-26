@@ -1,5 +1,5 @@
 ---
-title: "BinaryTree" # 타이틀 
+title: "BinarySearchTree" # 타이틀 
 author: "yongbeomkwak" #  작성자 
 date: 2022-04-14 12:30 +09:00 # 날짜  
 categories: [DataStructure,Tree,BinarySearchTree] #카데고리 
@@ -75,61 +75,134 @@ class Node(Anode):
         if(self.left==None and self.right==None): #자식노드가 모두 없으면 True
             return True
         return False
-
+    
+    def setRight(self,n:Anode):
+        self.right=n
+    
+    def setLeft(self,n:Anode):
+        self.left=n
 ~~~
 
 <br>
 
-### Tree(BinaryTree.py)
+### Dictionary(Dictionary.py)
 ~~~python
+from typing import TypeVar
+from abc import *
+
+E = TypeVar('E')
+K = TypeVar('K')
+
+class Dictionary(metaclass=ABCMeta):
+
+    @abstractmethod
+    def clear(self):
+        pass
+
+    @abstractmethod
+    def insert(self,key:K,e:E):
+        pass
+
+    @abstractmethod
+    def remove(self,key:K)-> E:
+        pass
+
+    @abstractmethod
+    def removeAny(self) -> E:
+        pass
+
+    @abstractmethod
+    def find(self,key:K)->E:
+        pass
+
+    @abstractmethod
+    def size(self)->int:
+        pass
+~~~
+
+
+<br>
+
+### BST(BST.py)
+
+~~~python
+from Dictionary import *
 from Node import *
 from typing import TypeVar
 E = TypeVar('E')
+K = TypeVar('K')
 
-class BinaryTree:
-    def __init__(self,root:Node):
-        self.__root:Node=root
+class BST(Dictionary):
     
-    def insert_Node(self,parent:Node,node:Node): #부모노드와 자식노드
-        if(node.getItem()<parent.getItem()): # 부모보다 작으면 왼쪽
-            if(parent.left==None): #비어있으면
-                parent.left=node
-                return
-            else: #있다면 해당 왼쪽을 기준으로 재귀
-                self.insert_Node(parent.left,node)
+    def __init__(self):
+        self.root:Node=None
+        self.__size:int=0
+
+
+
+    def size(self) -> int:
+        return self.__size
+    
+    def clear(self):
+        self.root=None
+        self.__size=0
+
+    
+    def insert(self, key: K, e: E):
+        if(self.root==None): # 최상위가 비어있으면 설정
+            self.root=Node(self.Entry(key,e),None,None)
         else:
-            if(parent.right==None):#비어있으면
-                parent.right=node
-                return
-            else: #오른쪽으로 재귀
-                self.insert_Node(parent.right,node)
+            self.insert_helper(key,e,self.root)
+        
+        self.__size+=1
+        
     
-    def getRoot(self)->Node:
-        return self.__root
+    def insert_helper(self,key:K,e:E,rt:Node)->Node:
+        
+        if(rt==None):
+            return Node(self.Entry(key,e),None,None)
+        elif(rt.getItem().key==key):
+            self.rt.getItem().element=e
+        elif(rt.getItem().key<key): #현재키가  목표보다 작으면 오른쪽으로
+            rt.setRight(self.insert_helper(key,e,rt.getRight()))
+        else: 
+            rt.setLeft(self.insert_helper(key,e,rt.getLeft()))
 
-    def visit(self,node:Node):
-        print(node.getItem())
+        return rt
+        
     
-    def preorder(self,node:Node):
-        if(node==None):
-            return
-        self.visit(node) #자기자신
-        self.preorder(node.left) #왼쪽 
-        self.preorder(node.right) #오른쪽
+    def remove(self, key: K) -> E:
+        return super().remove(key)
     
-    def postorder(self,node:Node):
-        if(node==None):
-            return
-        self.postorder(node.left) #왼
-        self.postorder(node.right) #오 
-        self.visit(node) #자기자신 
+    def removeAny(self) -> E:
+        return super().removeAny()
+    
+    def find(self, key: K) -> E:
 
-    def inorder(self,node:Node):
-        if(node==None):
-            return
-        self.inorder(node.left) #왼
-        self.visit(node) #자기자신
-        self.inorder(node.right) #오
+        return self.find_helper(key,self.root)
+        
+    
+    def find_helper(self,k:K,rt:Node) -> E:
+        
+        if(rt==None): #못 찾았을 때
+            return None
+        
+        if(rt.getItem().key==k):
+            return (rt.getItem().element)
+        
+        elif(rt.getItem().key<k): #현재보다 높은 값이면 오른쪽
+            return self.find_helper(k,rt.getRight())
+
+        else: #작으면 왼쪽
+            return self.find_helper(k,rt.getLeft())
+        
+
+    class Entry:
+        
+        def __init__(self,key:K,e:E):
+            self.key:K=key
+            self.element:E=e
+        
 ~~~
 
 <br>
@@ -137,41 +210,21 @@ class BinaryTree:
 ### 테스트(testAll.py)
 
 ~~~python
-from BinaryTree import *
-from Node import *
+from BST import *
 if __name__=="__main__":
-    root=Node(100)
-    tree=BinaryTree(root)
-    tree.insert_Node(root,Node(50))
-    tree.insert_Node(root,Node(80))
-    tree.insert_Node(root,Node(120))
-    tree.insert_Node(root,Node(20))
-    tree.insert_Node(root,Node(110))
-    tree.insert_Node(root,Node(180))
 
-    '''
-                100
-            50          120
-        20      80   110    180
-    '''
+    bst:Dictionary=BST()
 
-    print("Pre Order")
-    tree.preorder(root)
-    print("Post Order")
-    tree.postorder(root)
-    print("In Order")
-    tree.inorder(root)
+    bst.insert(11,"a")
+    bst.insert(3,"b")
+    bst.insert(5,"c")
+    bst.insert(2,"d")
+    
+
+    print(bst.find(2))  # d 
+    print(bst.find(5))  # c
+    print(bst.find(3))  # b 
+    print(bst.find(11)) # a
+    print(bst.find(30)) #None
 ~~~
-
-### 최종 구조
-<br>
-<img src="https://user-images.githubusercontent.com/48616183/162162395-16243649-4baf-4a6a-a8cb-82b4a93513a8.png" height="70%" width="70%">
-
-<br>
-
-### 결과
-
-<br>
-
-<img src="https://user-images.githubusercontent.com/48616183/162162614-fd16494f-fe50-4ee7-90a8-1bdaac51e1bb.png" height="70%" width="70%">
 

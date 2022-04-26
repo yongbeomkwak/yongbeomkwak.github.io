@@ -26,3 +26,9 @@ class Node(Anode):
         if(self.left==None and self.right==None): #자식노드가 모두 없으면 True
             return True
         return False
+    
+    def setRight(self,n:Anode):
+        self.right=n
+    
+    def setLeft(self,n:Anode):
+        self.left=n
