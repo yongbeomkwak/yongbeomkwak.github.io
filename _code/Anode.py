@@ -29,4 +29,8 @@ class Anode(metaclass=ABCMeta):
     def setRight(self,n:E):
         pass
 
+    @abstractmethod
+    def setItem(self,e:E):
+        pass
+
 

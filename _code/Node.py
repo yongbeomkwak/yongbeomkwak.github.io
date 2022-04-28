@@ -32,3 +32,6 @@ class Node(Anode):
     
     def setLeft(self,n:Anode):
         self.left=n
+    
+    def setItem(self,e):
+        self.item=e

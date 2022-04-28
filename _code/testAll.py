@@ -2,16 +2,20 @@ from BST import *
 if __name__=="__main__":
 
     bst:Dictionary=BST()
-
-    bst.insert(11,"a")
-    bst.insert(3,"b")
-    bst.insert(5,"c")
-    bst.insert(2,"d")
+    bst.insert(10,"a")
+    bst.insert(9,"b")
+    bst.insert(15,"c")
+    bst.insert(5,"d")
+    bst.insert(13,"e")
+    bst.insert(18,"f")
+    bst.insert(11,"g")
+    bst.insert(12,"h")
+    bst.insert(14,"i")
+    bst.insert(20,"k")
     
-
-    print(bst.find(2))  # d 
-    print(bst.find(5))  # c
-    print(bst.find(3))  # b 
-    print(bst.find(11)) # a
-    print(bst.find(30)) #None
+    print("Inorder before remove")
+    bst.inorder(bst.root)
+    bst.remove(15)
+    print("Inorder before remove")
+    bst.inorder(bst.root)
   
