@@ -33,7 +33,7 @@ class BST(Dictionary):
     def insert_helper(self,key:K,e:E,rt:Node)->LNode:
         
         if(rt==None):
-            return LNode(self.Entry(key,e)) #w
+            return LNode(self.Entry(key,e)) # 모든 삽입 은 LNode로 
         elif(rt.getItem().key==key):
             self.rt.getItem().element=e
         elif(rt.getItem().key<key): #목표키가 현재키보다 크면 오른쪽으로

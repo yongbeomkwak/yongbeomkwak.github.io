@@ -12,10 +12,5 @@ if __name__=="__main__":
     bst.insert(12,"h")
     bst.insert(14,"i")
     bst.insert(20,"k")
-    
-    print("Inorder before remove")
-    bst.inorder(bst.root)
-    bst.remove(15)
-    print("Inorder before remove")
     bst.inorder(bst.root)
   
