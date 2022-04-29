@@ -1,3 +1,4 @@
+from re import S
 from Dictionary import *
 from Node import *
 from typing import TypeVar
@@ -78,7 +79,6 @@ class BST(Dictionary):
         return cur.getItem()
     
     def removeLeftMost(self,rt:Anode): #값을 대체한 후 삭제하는 함수 , 삭제한 후 서브트리의 루트를 리턴
-        print(f'remove Rt: {rt.getItem().key}')
         if(rt.getLeft()==None): #더 이상 왼쪽이 없다면 내가 제일 작은 값, 즉 대체되었으므로 삭제되어야하는 값
             return rt.getRight() # 현재 노드가 삭제되므로 오른쪽 값으로 대체된다.
         else: #만약 왼쪽 값이 더 남아있다면 
@@ -100,8 +100,15 @@ class BST(Dictionary):
             
         
     
-    def removeAny(self) -> E:
-        return super().removeAny()
+    def removeAny(self): #가장 오른쪽 노드 중 , 자식이 존재하지 않으면 삭제 해당 노드 없을 시 무시
+        curr:Node=self.root
+        while(curr.getRight()!=None):
+            prev=curr
+            curr=curr.getRight()
+            if(curr.getLeft()==None and curr.getRight()==None):
+                prev.setRight(None)
+        
+        
     
     def find(self, key: K) -> E:
 
