@@ -34,7 +34,7 @@ class BST(Dictionary):
     def insert_helper(self,key:K,e:E,rt:Node)->LNode:
         
         if(rt==None):
-            return LNode(self.Entry(key,e)) # 모든 삽입 은 LNode로 
+            return Node(self.Entry(key,e)) # 모든 삽입 은 Node로 
         elif(rt.getItem().key==key):
             self.rt.getItem().element=e
         elif(rt.getItem().key<key): #목표키가 현재키보다 크면 오른쪽으로
@@ -69,6 +69,10 @@ class BST(Dictionary):
                 rt.setItem(lastmost) #찾은 값으로 변경
                 rt.setRight(self.removeLeftMost(rt.getRight())) #삭제후 완성된 서브트리를 오른쪽에 설정
         
+        if(rt.isLeaf()): #만약 자식이 없다면 
+            tmp_e=rt.getItem().element
+            tmp_k=rt.getItem().key
+            rt=LNode(tmp_k,tmp_e) #LNode로 대체
         return rt #삭제 후에도 여전히 루트는 rt이므로
     
     def getLeftMost(self,rt:Anode): #키값이 가장 작은 노드의 값을 찾는 함수

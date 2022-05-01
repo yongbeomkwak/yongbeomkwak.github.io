@@ -20,7 +20,7 @@ if __name__=="__main__":
     bst.preorder(bst.root)
     print()
     bst.remove(15)
-    print("Preorder before remove")
+    print("Preorder after remove")
     bst.preorder(bst.root)
     print()
     print(f'Size before remove:{bst.size()}')
