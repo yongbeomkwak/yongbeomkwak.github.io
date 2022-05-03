@@ -7,7 +7,7 @@ if __name__=="__main__":
     heap.insert(1000)
     heap.insert(0)
    
-    heap.prt()
     while(not(heap.isempty())):
+        heap.prt()
         print(heap.removemax())
     
