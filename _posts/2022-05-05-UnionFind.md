@@ -12,6 +12,7 @@ use_math: true #수식 사용
 
 <br>
 
+-   parent를 담당하는 배열이 전역으로 선언
 -   같은 집합에 포함되어있는지.
 -   path Compression: Find연산 중 Root를 최상위로 계속 바꿔줌
 
