@@ -13,7 +13,7 @@
 ## Readme Helper
 1.  [이미지](https://hyeonjiwon.github.io/blog/markdown_img/)
 2.  [수식 적용 세팅](https://mkkim85.github.io/blog-apply-mathjax-to-jekyll-and-github-pages/)
-3.  [수식 사용](https://huni0318.github.io/blog/blog-etc/2020-12-21-markdown-tutorial2/)
+3.  [수식 사용](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:TeX_%EB%AC%B8%EB%B2%95)
 
 ##  Extra
 - command
